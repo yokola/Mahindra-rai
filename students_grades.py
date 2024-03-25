@@ -6,7 +6,7 @@ while i <= num_students:
     num_subjects = int(input(f"enter the number ofsubjects for students {i}: "))
     
     for j in range(1, num_subjects + 1):
-       grade = float(input(f"enter the subject {j} grade fpr student{i}: "))
+       grade = float(input(f"enter the subject {j} grade for student{i}: "))
        total_grade += grade
 
        average_grade = total_grade / num_subjects
