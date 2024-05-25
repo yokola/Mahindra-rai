@@ -8,4 +8,5 @@ X = 5
 print(not(X > 3 and X < 10))
 
 Y = 12
-print(not(Y > 10 and Y % 5 == 0))
+print(not(Y > 10 and Y % 5 == 0)) 
+

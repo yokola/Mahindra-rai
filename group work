@@ -1,0 +1,41 @@
+class Solution:
+#This line defines a Python class named Solution. Classes are a way to bundle data and functionality together.
+#Inside this class, there is a method named toh which solves the Tower of Hanoi problem.
+def toh(self, N, fromm, to, aux):
+    #This line defines a method named toh within the Solution class. It takes four parameters:
+    #self: This parameter is a reference to the current instance of the class. It is used to access variables and 
+   # methods within the class.
+    #N: The number of disks to be moved.
+    #fromm: The index of the rod from which the disks are to be moved.
+    #to: The index of the rod to which the disks are to be moved.
+    #aux: The index of the auxiliary rod.
+    if N == 1:
+    print("Move disk " + str(N) + " from rod " + str(fromm) + " to rod " + str(to))
+    return 1
+#This if statement checks if there is only one disk to move. If N is equal to 1,
+ #it prints a message indicating the move of the disk from one rod to another and returns 1.
+moves = 0
+moves += self.toh(N - 1, fromm, aux, to)
+#This initializes a variable moves to 0 and then calls the toh method recursively with N - 1 disks, 
+#moving them from the fromm rod to the aux rod. 
+#It adds the number of moves returned by this recursive call to the moves variable.
+moves += 1
+#This line increments the moves variable by 1,
+# indicating the move of the largest disk from the fromm rod to the to rod.
+print("Move disk " + str(N) + " from rod " + str(fromm) + " to rod " + str(to))
+
+#This line prints a message indicating the move of the largest disk from the fromm rod to the to rod.
+moves += self.toh(N - 1, aux, to, fromm)
+#This line calls the toh method recursively again, moving the N - 1 disks from the aux rod to the to rod, 
+#using the fromm rod as an auxiliary.
+# It adds the number of moves returned by this recursive call to the moves variable.
+return moves
+#finally, this line returns the total number of moves made for this step and all recursive steps.
+s = Solution()
+print(s.toh(3, 1, 3, 2))
+#This creates an instance of the Solution class and calls the toh method with the arguments N=3, 
+fromm=1, to=3, and aux=2. 
+#It then prints the total number of moves required to solve the Tower of Hanoi problem for 3 disks.
+
+
+

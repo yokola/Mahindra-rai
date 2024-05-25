@@ -30,6 +30,6 @@ while input("Do you want to go forward? (yes\no): ").lower() == 'yes':
     if not forward_history.empty():
         backward_history.put(current_page) 
         current_page = forward_history.grt() 
-        print   
+        print    
 
      
